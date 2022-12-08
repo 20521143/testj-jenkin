@@ -41,27 +41,27 @@ class FlightTestCase(TestCase):
         f = Flight.objects.get(origin=a1, destination=a2, duration=-100)
         self.assertFalse(f.is_valid_flight())
         
-    def test_index(self):
+    # def test_index(self):
     
-        # Set up client to make requests
-        c = Client()
+    #     # Set up client to make requests
+    #     c = Client()
 
-        # Send get request to index page and store response
-        response = c.get("/flights/")
+    #     # Send get request to index page and store response
+    #     response = c.get("/flights/")
 
-        # Make sure status code is 200
-        self.assertEqual(response.status_code, 200)
+    #     # Make sure status code is 200
+    #     self.assertEqual(response.status_code, 200)
 
-        # Make sure three flights are returned in the context
-        self.assertEqual(response.context["flights"].count(), 3)
+    #     # Make sure three flights are returned in the context
+    #     self.assertEqual(response.context["flights"].count(), 3)
     
-    def test_valid_flight_page(self):
-        a1 = Airport.objects.get(code="AAA")
-        f = Flight.objects.get(origin=a1, destination=a1)
+    # def test_valid_flight_page(self):
+    #     a1 = Airport.objects.get(code="AAA")
+    #     f = Flight.objects.get(origin=a1, destination=a1)
 
-        c = Client()
-        response = c.get(f"/flights/{f.id}")
-        self.assertEqual(response.status_code, 200)
+    #     c = Client()
+    #     response = c.get(f"/flights/{f.id}")
+    #     self.assertEqual(response.status_code, 200)
         
     # def test_invalid_flight_page(self):
     #     max_id = Flight.objects.all().aggregate(Max("id"))["id__max"]
