@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'git@github.com:20521143/testj-jenkin.git'
+                git clone 'https://github.com/20521143/testj-jenkin.git'
             }
         }
     }
