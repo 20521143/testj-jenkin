@@ -17,9 +17,15 @@ pipeline {
     }
     post
     {
-        always
+        success
         {
            mail bcc: '', body: 'BUILD AND TEST SUCCESS', cc: '20521081@gm.uit.edu.vn,nguyenthanhcong012002@gmail.com', from: '', replyTo: '', subject: 'Build notifacation', to: '20521143@gm.uit.edu.vn'
+        }
+
+        failure
+        {
+
+           mail bcc: '', body: 'BUILD AND TEST FAIL', cc: '20521081@gm.uit.edu.vn,nguyenthanhcong012002@gmail.com', from: '', replyTo: '', subject: 'Build notifacation', to: '20521143@gm.uit.edu.vn'
         }
     }
 }
