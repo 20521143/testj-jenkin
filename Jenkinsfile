@@ -15,4 +15,11 @@ pipeline {
         }
         
     }
+    post
+    {
+        always
+        {
+           mail bcc: '', body: '', cc: '20521081@gm.uit.edu.vn,nguyenthanhcong012002@gmail.com', from: '', replyTo: '', subject: '', to: '20521143@gm.uit.edu.vn'
+        }
+    }
 }
