@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
                 steps {
-                    sh 'python app/manage.py test'
+                    sh 'python manage.py test'
                 }
         }
         
