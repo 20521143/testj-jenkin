@@ -1,0 +1,22 @@
+{% extends "flights/layout.html" %}
+
+{% block body %}
+                {%if messages %}
+                    {% for message in messages %}
+                        <div class="{{message.tags}} alert alert-primary" role="alert">{{message }}</div>
+                    {%endfor%}
+                {%endif%}
+
+            <div class="container " >
+
+            <form action="." method="post" >
+
+                {% csrf_token %}
+                {{ form.as_p}}
+            </br>
+                <input type="submit" value="Submit" class="btn btn-primary" id="submit-post">
+            </form>
+
+        </div>
+
+{% endblock %}

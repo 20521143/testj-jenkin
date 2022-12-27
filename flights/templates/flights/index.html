@@ -1,10 +1,21 @@
 {% extends "flights/layout.html" %}
 
 {% block body%}
+                {%if messages %}
+                    {% for message in messages %}
+                        <div class="{{message.tags}}" >{{message }}</div>
+                    {%endfor%}
+                {%endif%}
+
     <h1>Flights:</h1>
     <ul>
         {% for flight in flights %}
-            <li> <a href="{% url 'flight' flight.id %}"> Flight: {{ flight.id}} </a> : {{ flight.origin }} to {{ flight.destination}}</li>
+            <li> <a href="{% url 'flights:flight' flight.id %}"> Flight: {{ flight.id}} </a> : {{ flight.origin }} to {{ flight.destination}}</li>
         {% endfor %}
     </ul>
+
+</br>
+<a href="{% url 'flights:add_flight'%}"> <button type="button" class="btn btn-secondary">Add new Flight</button></a>
+   
+
 {% endblock %}
