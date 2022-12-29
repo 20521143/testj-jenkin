@@ -38,7 +38,7 @@ def add(request):
     if request.method == 'POST':
         form = FlightForm(request.POST)
         
-        if form.is_valid():# and float(request.POST['duration']) > 0:
+        if form.is_valid() :#and float(request.POST['duration']) > 0:
             form.save()
             
             messages.success(request, "Flight added successfully")
